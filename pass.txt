@@ -1,0 +1,19 @@
+eNShcTbVXpugddC4
+krahulmeena9968
+
+
+// Connection to database with mongodb
+const express = require("express");
+const mongoose = require("mongoose");
+
+const PORT = process.env.PORT || 3002;
+
+const uri = process.env.MONGO_URL;
+
+const app = express();
+
+app.listen(PORT, () => {
+  console.log("Listening on port 3002");
+  mongoose.connect(uri);
+  console.log("DB Connected");
+});
